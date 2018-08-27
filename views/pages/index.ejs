@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+<div style="margin-left:50px;margin-right:50px">
+    <div class="col s12">
+        <a class="btn btn-success btn-lg" href="/employee/form">add a new employee</a>
+    </div>
+</div>
+<br/>
+<div style="margin-left:50px;margin-right:50px">
+    <div class="col s12">
+        <% if ( items.length > 0){ %>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Joining Date</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items.forEach(function(item, index){ %>
+                        <tr>
+                            <td><%= item.e_id %></td>
+                            <td><%= item.e_name %></td>
+                            <td><%= item.e_address %></td>
+                            <td><%= item.e_join_date %></td>
+                            <td colspan="2">
+                                <a class="btn btn-success" href="/employee/updateForm/<%= item.e_id %>">Update</a>
+                                <a class="btn btn-danger" href="/employee/delete/<%= item.e_id %>">Delete</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p><strong>Thetre are no employee available</strong></p>
+        <% } %>
+    </div>
+</div>
+<% include ../partials/footer %>

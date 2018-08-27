@@ -4,7 +4,7 @@
 
 * First create a sarver.js file within project deractory.
 * Create a package.json file within project deractory by using flowing command. 
-### npm init
+###### npm init
 
 
 * For general package installation we have to use @ npm install package-name @ Example: npm install express
